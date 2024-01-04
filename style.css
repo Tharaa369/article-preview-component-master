@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --Very-Dark-Grayish-Blue: hsl(217, 19%, 35%);
+    --Desaturated-Dark-Blue: hsl(214, 17%, 51%);
+    --Grayish-Blue: hsl(212, 23%, 69%);
+    --Light-Grayish-Blue: hsl(210, 46%, 95%);
+}
+body{
+    font-family: 'Manrope', sans-serif;
+    font-size: 13px;
+    background-color: var(--Light-Grayish-Blue);
+
+}
+.attribution {
+    position: fixed; 
+    bottom: 0;
+    font-size: 11px;
+    text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+.container{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.card{
+    width: 700px;
+    height: 350px;
+    display: grid;
+    grid-template-columns:  2fr 3fr;
+
+}
+.img{
+    background-image: url("images/drawers.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius:  20px 0 0 20px  ;
+    -webkit-border-radius:  20px 0 0 20px  ;
+    -moz-border-radius:  20px 0 0 20px  ;
+    -ms-border-radius:  20px 0 0 20px  ;
+    -o-border-radius:  20px 0 0 20px  ;
+    overflow: hidden;
+}
+
+    
+.description{
+    background-color: white;
+    padding: 1.1rem;
+    border-radius: 0 20px 20px 0 ;
+    -webkit-border-radius: 0 20px 20px 0 ;
+    -moz-border-radius: 0 20px 20px 0 ;
+    -ms-border-radius: 0 20px 20px 0 ;
+    -o-border-radius: 0 20px 20px 0 ;
+}
+.auther{
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: 100px;
+}
+.avatar{
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    overflow: hidden;
+    margin-right: 1rem;
+}
+.avatar img{
+    width: 100%;
+}
+
+.share{
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 50%;
+    background-color: var(--Light-Grayish-Blue);
+    float: right;
+    right: 10px;
+    position: absolute;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    text-align: center;
+    line-height: 2.2rem;
+    cursor: pointer;
+}
+.share:hover {
+    background-color: var(--Very-Dark-Grayish-Blue);
+}
+.share:hover svg path{
+    fill: white;
+}
+.description>p{
+    margin: 1.1rem 0;
+    line-height: 1.3rem;
+}
+.links{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 200px;
+    height: 50px;
+    background-color: var(--Very-Dark-Grayish-Blue);
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+    position: absolute;
+    top: -40px;
+    right: -70px;
+    color: white;
+    font-size: 1.4em;
+    display: none;
+    transition: .5s;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    -o-transition: .5s;
+}
+.links::after{
+    content: '';
+    border-color: var(--Very-Dark-Grayish-Blue) transparent transparent transparent;
+    border-width: 15px ;
+    border-style: solid;
+    position: absolute;
+    bottom: -25px;
+}
+.links>p{
+    text-transform: uppercase;
+    letter-spacing: .1em;
+}
+.links.clicked{
+    display: flex;
+}
+.links svg{
+    cursor: pointer;
+}
+@media screen and (max-width:575px) and (min-width:375px) {
+    .description{
+        padding: 1rem;
+    }
+    .description h2{
+        font-size: 1.1rem;
+    }
+    .description>p{
+    margin: 1rem 0;
+    line-height: 1.1rem;
+    }
+    .avatar{
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    overflow: hidden;
+    margin-right: 1rem;
+    }
+}
+@media screen and (max-width:375px) {
+    .card{
+        width: 370px;
+        height: 500px;
+        display: grid;
+        grid-template:  1fr 2fr / auto;
+    }
+    .description{
+        padding: 0;
+    }
+    .description h2{
+        margin: 1rem;
+    }
+    .description>p{
+        margin: 1rem;
+    }
+    .links{
+        justify-content: left;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        border-radius: 0 0 15px 15px;
+        -webkit-border-radius: 0 0 15px 15px;
+        -moz-border-radius: 0 0 15px 15px;
+        -ms-border-radius: 0 0 15px 15px;
+        -o-border-radius: 0 0 15px 15px;
+}
+    .links>p{
+        margin-left: 20px;
+    }
+    .links svg{
+        margin-left: 20px;
+    }
+    .links::after{
+    content: none;
+    }
+    .share{
+        z-index: 2;
+    }
+}
